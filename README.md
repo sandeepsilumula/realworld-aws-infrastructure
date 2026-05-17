@@ -4,7 +4,7 @@ An automated, highly available, and production-ready **Three-Tier Cloud Infrastr
 
 ## 📐 System Architecture Diagram
 
-[ Public Internet Users ]
+             [ Public Internet Users ]
                          │
                          ▼
  🌐  Edge Delivery: Application Load Balancer (ALB)
