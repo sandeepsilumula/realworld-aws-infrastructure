@@ -30,7 +30,7 @@ An automated, highly available, and production-ready **Three-Tier Cloud Infrastr
  │   🔑 Amazon RDS MySQL Relational Database Cluster      │
  └────────────────────────────────────────────────────────┘
 
----
+
 
 ## 🌟 Key Infrastructure & Engineering Pillars
 
