@@ -69,12 +69,12 @@ An automated, highly available, and production-ready **Three-Tier Cloud Infrastr
 
 ## 🛠️ File Structure Matrix
 
-```text
-.
-├── .github/
-│   └── workflows/
-│       └── deploy-pipeline.yml   # CI/CD Automated Workflow Blueprint File
-├── main.tf                       # Multi-Tier AWS Core Blueprint Architecture 
-├── providers.tf                  # Declares HashiCorp AWS Plugin Constraints
-├── variables.tf                  # Protects Sensitive Administrative Inputs
-└── outputs.tf                    # Extracts Live Cloud DNS Runtime Addresses
+* 📂 **`.github/workflows/`** — Continuous Integration Core Workspace Directory
+  * 📄 `deploy-pipeline.yml` — Automated GitOps Actions CI/CD Pipeline Workflow Script
+* 📄 **`main.tf`** — Master Multi-Tier Production Infrastructure Topology Declarations
+* 📄 **`providers.tf`** — Pins Underlying HashiCorp Engine Plugins to Verified Stable AWS 5.x
+* 📄 **`variables.tf`** — Isolates and Declares Sensitive Infrastructure Runtime Configurations
+* 📄 **`outputs.tf`** — Extracts and Displays Operational Runtime Values Post Deployment Passes
+* 📄 **`README.md`** — Comprehensive Architectural Technical Summary Documentation
+
+## docs: convert directory structure map to high-visibility clean layout list
