@@ -4,32 +4,34 @@ An automated, highly available, and production-ready **Three-Tier Cloud Infrastr
 
 ## 📐 System Architecture Diagram
 
-             [ Public Internet Users ]
-                         │
-                         ▼
- 🌐  Edge Delivery: Application Load Balancer (ALB)
-                         │
-           ┌─────────────┴─────────────┐
-           ▼ (AZ 1a)                   ▼ (AZ 1b)
- ┌───────────────────────────┐┌───────────────────────────┐
- │  🛡️ Public Subnet         ││  🛡️ Public Subnet         │
- │   [NAT Gateway Routing]   ││   [Backup Route Tables]   │
- └─────────┬─────────────────┘└─────────┬─────────────────┘
-           │                            │
-           ▼ (Private VPC Ingress Only) ▼
- ┌───────────────────────────┐┌───────────────────────────┐
- │  🔒 Private Subnet        ││  🔒 Private Subnet        │
- │   💻 Compute Instance Node││   💻 Compute Instance Node│
- │      (Apache Web Tier)    ││      (Apache Web Tier)    │
- └─────────┬─────────────────┘└─────────┬─────────────────┘
-           │                            │
-           └─────────────┬──────────────┘
-                         ▼ (Strict Ingress Port 3306)
- ┌────────────────────────────────────────────────────────┐
- │  🗄️ Isolated Storage Subnet Tier                        │
- │   🔑 Amazon RDS MySQL Relational Database Cluster      │
- └────────────────────────────────────────────────────────┘
-
+```html
+<pre style="background: #0f172a; color: #38bdf8; padding: 20px; border-radius: 12px; border: 1px solid #334155; font-family: monospace; font-size: 13px; line-height: 1.5; overflow-x: auto;">
+                 [ 🌐 Public Internet Users ]
+                              │
+                              ▼
+       Edge Delivery: Application Load Balancer (ALB)
+                              │
+                ┌─────────────┴─────────────┐
+                ▼ (AZ 1a)                   ▼ (AZ 1b)
+      ┌───────────────────────────┐┌───────────────────────────┐
+      │  🛡️ Public Subnet         ││  🛡️ Public Subnet         │
+      │   [NAT Gateway Routing]   ││   [Backup Route Tables]   │
+      └─────────┬─────────────────┘└─────────┬─────────────────┘
+                │                            │
+                ▼ (Private VPC Ingress Only) ▼
+      ┌───────────────────────────┐┌───────────────────────────┐
+      │  🔒 Private Subnet        ││  🔒 Private Subnet        │
+      │   💻 Compute Instance Node││   💻 Compute Instance Node│
+      │      (Apache Web Tier)    ││      (Apache Web Tier)    │
+      └─────────┬─────────────────┘└─────────┬─────────────────┘
+                │                            │
+                └─────────────┬──────────────┘
+                              ▼ (Strict Ingress Port 3306)
+      ┌────────────────────────────────────────────────────────┐
+      │  🗄️ Isolated Storage Subnet Tier                        │
+      │   🔑 Amazon RDS MySQL Relational Database Cluster      │
+      └────────────────────────────────────────────────────────┘
+</pre>
 
 
 ## 🌟 Key Infrastructure & Engineering Pillars
